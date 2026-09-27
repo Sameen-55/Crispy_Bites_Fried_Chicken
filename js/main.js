@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
@@ -46,9 +46,10 @@
   document.querySelectorAll('.favorite').forEach(function (button) {
     button.addEventListener('click', function () {
       const favorite = button.classList.toggle('is-favorite');
-      button.textContent = favorite ? '♥' : '♡';
+      button.textContent = favorite ? 'â™¥' : 'â™¡';
       button.setAttribute('aria-pressed', String(favorite));
     });
   });
 
 })();
+

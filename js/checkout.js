@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
   const form = document.getElementById('checkout-form');
   const layout = document.getElementById('checkout-layout');
@@ -12,7 +12,7 @@
     const totalElement = document.getElementById('checkout-total');
     if (!container || !subtotalElement || !totalElement) return;
     container.innerHTML = cart.map(function (item) {
-      return '<div class="checkout-item"><img src="' + item.image + '" alt="' + escapeHTML(item.name) + '"><div><strong>' + escapeHTML(item.name) + '</strong><span>Qty ' + item.quantity + ' · ' + window.CrispyBites.formatPrice(item.price) + '</span></div><b>' + window.CrispyBites.formatPrice(item.price * item.quantity) + '</b></div>';
+      return '<div class="checkout-item"><img src="' + item.image + '" alt="' + escapeHTML(item.name) + '"><div><strong>' + escapeHTML(item.name) + '</strong><span>Qty ' + item.quantity + ' Â· ' + window.CrispyBites.formatPrice(item.price) + '</span></div><b>' + window.CrispyBites.formatPrice(item.price * item.quantity) + '</b></div>';
     }).join('');
     const subtotal = cart.reduce(function (sum, item) { return sum + item.price * item.quantity; }, 0);
     subtotalElement.textContent = window.CrispyBites.formatPrice(subtotal);
@@ -47,3 +47,4 @@
 
   window.renderCheckoutSummary();
 })();
+

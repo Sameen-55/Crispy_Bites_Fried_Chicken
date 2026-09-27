@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
   const grid = document.getElementById('menu-grid');
   if (!grid || !window.CrispyBites) return;
@@ -22,7 +22,7 @@
       return categoryMatch && searchMatch;
     });
     grid.innerHTML = filtered.map(function (product) {
-      return '<article class="food-card"><div class="food-image"><img src="' + product.image + '" alt="' + escapeHTML(product.name) + '" loading="lazy"><button class="favorite" type="button" aria-label="Add ' + escapeHTML(product.name) + ' to favorites" aria-pressed="false">♡</button><span class="tag">' + escapeHTML(product.category.toUpperCase()) + '</span></div><div class="food-info"><h3>' + escapeHTML(product.name) + '</h3><p>' + escapeHTML(product.description) + '</p><div class="food-bottom"><strong>' + window.CrispyBites.formatPrice(product.price) + '</strong><button class="add-button" type="button" data-add="' + escapeHTML(product.id) + '">＋ Add</button></div></div></article>';
+      return '<article class="food-card"><div class="food-image"><img src="' + product.image + '" alt="' + escapeHTML(product.name) + '" loading="lazy"><button class="favorite" type="button" aria-label="Add ' + escapeHTML(product.name) + ' to favorites" aria-pressed="false">â™¡</button><span class="tag">' + escapeHTML(product.category.toUpperCase()) + '</span></div><div class="food-info"><h3>' + escapeHTML(product.name) + '</h3><p>' + escapeHTML(product.description) + '</p><div class="food-bottom"><strong>' + window.CrispyBites.formatPrice(product.price) + '</strong><button class="add-button" type="button" data-add="' + escapeHTML(product.id) + '">ï¼‹ Add</button></div></div></article>';
     }).join('');
     result.textContent = 'Showing ' + filtered.length + (filtered.length === 1 ? ' delicious item' : ' delicious items');
     empty.hidden = filtered.length > 0;
@@ -30,7 +30,7 @@
     grid.querySelectorAll('.favorite').forEach(function (button) {
       button.addEventListener('click', function () {
         const favorite = button.classList.toggle('is-favorite');
-        button.textContent = favorite ? '♥' : '♡';
+        button.textContent = favorite ? 'â™¥' : 'â™¡';
         button.setAttribute('aria-pressed', String(favorite));
       });
     });
@@ -60,3 +60,4 @@
   });
   render();
 })();
+
